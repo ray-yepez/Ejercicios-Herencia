@@ -1,0 +1,34 @@
+« Sea la información de un *artículo*: *nombre, cantidad y precio base*. Se
+espera que los artículos tengan un descuento, pero eso dependerá de
+cada departamento 
+
+El departamento de juguetes está ofreciendo un *descuento* del 10% si 
+el juguete es para edad de 1 año.
+Usando la clase suministrada *Cl_articulo*, programe la clase *Cl_juguete* (1) 
+con el *atributo edad* y el *método descuento*, que permita calcular el 
+monto a pagar correctamente. Note que esta nueva clase sólo amerita 
+edad y descuento() (2).
+Realice un programa que lea los datos de un juguete y reporte el monto a pagar.
+------------------------------------------
+
+Bueno, aquí nos dicen que solo programemos, pero seguro en el parcial
+nos van a pedir el análisis, así que bueno. Ahí tenemos entre ** las palabras
+que subrayaríamos y aquí sería el cuadro de valores de prueba según la muestra
+del ejercicio original:
+
+| nombre  | cantidad  | precioBase | edad |   aPagar   |
+|---------|-----------|---------|------|------------|
+| Carrito |     2     |   10    |  2   |   20.00    |
+| Peluche |     3     |   20    |  1   |   54.00    |
+
+Requerimientos:
+
+1. La clase Cl_juguete heredará de la clase artículo, compartiendo sus atributos
+(nombre, cantidad, precioBase) y tendrá adicionalmente tendrá los atributos para el
+requerimiento 2.
+
+2. El descuento dependerá de la edad recomendada del juguete, definida
+en atributo "edad": si este es igual a 1, el descuento será 
+precioBase * (10/100)(proceso universal de porcentaje).
+
+(El diagrama de clases lo hice con Visual Paradigm):
