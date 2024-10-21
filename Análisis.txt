@@ -1,0 +1,16 @@
+« Considerando que un rectángulo varía de un cuadrado sólo
+porque la altura no es igual a la base, diseñe la clase
+Cl_rectangulo que herede de Cl_cuadrado, y luego haga un
+programa que determine el área (1) y el perímetron (2) de un rectángulo
+(área= base * altura (1), perímetro= 2*base + 2*altura (2)). »
+
+
+El análisis está en el mismo planteamiento, así que para no dejarlo así vamos
+a hacer el cuadro de los valores de prueba:
+
+| base | altura | area | perimetro |
+------------------------------------
+|  4   |   2    |  8   |     5     |
+|  3   |   5    |  15  |     16    |
+
+
