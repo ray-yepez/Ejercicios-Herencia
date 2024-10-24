@@ -1,0 +1,65 @@
+«En una peluquería se atienden los clientes
+según el largo del cabello (1=Corto,
+2=Largo). Se ofrecen los siguientes
+servicios básicos (1=Corte, 2=Secado,
+3=Ambos), de los cuales los precios básicos
+serán BsF: 35, 50 y 75, respectivamente;
+pero si es de cabello corto se ofrece
+Extensiones con un costo de BsF 500 y si
+es largo Permanentes con un valor de BsF
+300. Además, se sabe que el precio de los
+servicios tiene un 20% de descuento si el
+servicio es corte + secado (servicio
+básico=3). Se desea conocer: a) por cliente:
+monto de descuento y monto a pagar, b)
+por la peluquería: Mayor monto pagado.»
+
+Pelo corto:                    
+ __________________________________________________________________________
+|cedula |servicio|extension|precio()| precioExt()|descuento()| montoPagar()|
+|-------|--------|---------|--------|------------|-----------|-------------|
+|   22  |   2    |   NO    |$50,00  |     -      |    $-     |   $50,00    |
+|   11  |   1    |   SI    |$35,00  |   500,00   |    $-     |   $535,00   |
+|   55  |   1    |   NO    |$35,00  |     -      |    $-     |   $35,00    |
+|   88  |   3    |   SI    |$75,00  |   500,00   |  $115,00  |(b)$460,00   |
+----------------------------------------------------------------------------
+
+Pelo largo:
+ __________________________________________________________________________
+|cedula|servicio|permanente|precio()|precioPmte()|descuento()| montoPagar()|
+|------|--------|----------|--------|------------|-----------|-------------|
+|  44  |   2    |    SI    |$ 50,00 |  300,00    |    -$     |   $350,00   |
+|  33  |   3    |    NO    |$ 75,00 |     -      |   $15,00  |   $60,00    |
+|  77  |   1    |    NO    |$ 35,00 |     -      |    -$     |   $35,00    |
+|  66  |   3    |    SI    |$ 75,00 |  300,00    |   $75,00  |   $300,00   |
+|______|________|__________|________|____________|___________|_____________|
+
+Análisis:
+
+- Existe una clase Cliente, la cual será padre de las clases Largo y Corto
+- La clase Cliente heredará a las otras los atributos cedula y servicio, y los
+métodos precio(), descuento() y montoPagar(). 
+
+Lógica de métodos:
+
+precio(): Según el tipo de servicio (1,2 ó 3) devolverá 35, 50 ó 75 respectiva-
+mente.
+  
+- Requerimiento (a):
+
+descuento(): si el tipo de servicio es 3 (corte y secado), el descuetno será 
+(precio() + servEspecial()) * (20/100). Donde servEspecial() es precioExt() si
+en la clase "Corto" y precioPmte() en la clase "Largo". Para efectos de 
+herencia, en la clase padre "Cliente" retornará cero, y será definido según
+corresponda en las clases hijas.
+
+montoPagar(): precio() + servEspecial() - descuento(). En la clase padre solo 
+se definirá como precio() - descuento().
+
+- Requerimiento (b):
+
+Se utiliza un método procesarClt(Cliente) de una clase Peluqueria y a través 
+del Proceso Universal de Mayor se obtiente el mayor monto pagado ($460,00)
+
+
+
