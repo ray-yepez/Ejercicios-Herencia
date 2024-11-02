@@ -27,24 +27,23 @@ import Cl_Persona  from "./Cl_Persona.js";
 
 let cine= new Cl_Cine();
 
-let persona1= new Cl_Estudiante("Anna", 2, 2);
-let persona2= new Cl_Persona("Carla",1);
-let persona3= new Cl_AdultoMayor("Luis", 3);
-let persona4= new Cl_Estudiante ("Leo", 2, 3);
+let persona1 = new Cl_Estudiante("Anna", 2, 2);
+let persona2 = new Cl_Persona("Carla", 1);
+let persona3 = new Cl_AdultoMayor("Luis", 3);
+let persona4 = new Cl_Estudiante ("Leo", 2, 3);
 
 cine.procesarPersona(persona1);
 cine.procesarPersona(persona2);
 cine.procesarPersona(persona3);
 cine.procesarPersona(persona4);
 
+
 let salida = document.getElementById("salida")
 let mostrarPersona=(persona)=> {
-  console.log(persona.tipo);
-  console.log(persona.tipo == 1 ? persona.dia : "-");
   return `<tr>
 <td>${persona.nombre}</td>
 <td>${persona.tipo}</td>
-<td>${persona.tipo == 1 ? persona.dia : "-"}</td>
+<td>${persona.tipo == 2 ? persona.dia : "-"}</td>
 <td>${persona.descuento().toFixed(2)}</td>
 <td>${persona.precioEntrada().toFixed(2)}</td>
 </tr>`; 
@@ -64,6 +63,6 @@ ${mostrarPersona(persona4)}
 <br>
 <br>Cantidad de personas que asistieron: ${cine.contPer}
 <br>Porcentaje de personas de la tercera edad: ${cine.porcentajeMayor()}%
-<br>Monto total pagado por estudiante: ${cine.mostrarMontoEstudiante()}
+<br>Monto total pagado por estudiante: ${cine.mostrarMontoEstudiante().toFixed(2)}
 <br>Monto total recaudado: ${cine.mostrarMontoTotal()}
 `;

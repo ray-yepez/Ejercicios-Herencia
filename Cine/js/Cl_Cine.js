@@ -12,7 +12,7 @@ export default class Cl_Cine {
         if(persona.tipo==3){
             this.contTercera++;
         }
-        if(persona.tipo=2){
+        if(persona.tipo==2){
             this.acumMonto+=persona.precioEntrada();
         }
     }
